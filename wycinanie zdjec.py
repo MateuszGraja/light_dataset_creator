@@ -7,7 +7,7 @@ import csv
 # Ustawienia ścieżki do folderu skryptu
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Lista poziomów procentowych i odpowiadających etykiet (labeli)
+# Lista poziomów procentowych i odpowiadających etykiet
 percentages = ['0%', '3%', '10%', '30%', '100%']
 labels = {'0%': 0, '3%': 1, '10%': 2, '30%': 3, '100%': 4}
 
@@ -36,7 +36,7 @@ def extract_roi_center(image, roi_width, roi_height, search_window=600):
     sum_x = np.sum(search_area, axis=0)  # Sumowanie w pionie (kolumny)
     sum_y = np.sum(search_area, axis=1)  # Sumowanie w poziomie (wiersze)
 
-    # Znajdowanie indeksu środka dla osi X i Y (punktu o największej jasności)
+    # Znajdowanie indeksu środka dla osi X i Y
     local_center_x = np.argmax(sum_x)
     local_center_y = np.argmax(sum_y)
 
